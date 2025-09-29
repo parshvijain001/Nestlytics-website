@@ -1040,12 +1040,7 @@
                 }
             }
 
-            /* Make stats grid single column on very small phones */
-            @media (max-width: 480px) {
-                .stats-grid {
-                    grid-template-columns: 1fr;
-                }
-            }
+
         }
 
         .responsive-img {
@@ -1211,226 +1206,227 @@
                             <div class="stat-card">
                                 <div class="stat-value">0</div>
                                 <div class="stat-label"><b>Total Observations</b></div>
-                            </div <div class="stat-card">
-                            <div class="stat-value">0</div>
-                            <div class="stat-label"><b>Unique Species</b></div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">0</div>
-                            <div class="stat-label"><b>Survey Locations</b></div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">0/km²</div>
-                            <div class="stat-label"><b>Avg. Density</b></div>
+                                <div>class="stat-card"></div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-label"><b>Unique Species</b></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label"><b>Survey Locations</b></div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">0/km²</div>
+                                <div class="stat-label"><b>Avg. Density</b></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="section">
-                    <h2 class="section-title">📈 Species Abundance Chart</h2>
-                    <div class="chart-container">
-                        <canvas id="speciesChart"></canvas>
+                    <div class="section">
+                        <h2 class="section-title">📈 Species Abundance Chart</h2>
+                        <div class="chart-container">
+                            <canvas id="speciesChart"></canvas>
+                        </div>
                     </div>
-                </div>
 
-                <div class="section">
-                    <h2 class="section-title">📋 Data Summary Table</h2>
-                    <div style="overflow-x: auto;">
-                        <table class="data-table" id="dataTable">
-                            <thead>
-                                <tr>
-                                    <th>Species</th>
-                                    <th>Total Count</th>
-                                    <th>Observations</th>
-                                    <th>Avg. per Observation</th>
-                                    <th>Density</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td colspan="5" style="text-align: center; color: #999; padding: 30px;">
-                                        No dataset selected. Upload or select a dataset to view analysis!
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div class="section">
+                        <h2 class="section-title">📋 Data Summary Table</h2>
+                        <div style="overflow-x: auto;">
+                            <table class="data-table" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>Species</th>
+                                        <th>Total Count</th>
+                                        <th>Observations</th>
+                                        <th>Avg. per Observation</th>
+                                        <th>Density</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td colspan="5" style="text-align: center; color: #999; padding: 30px;">
+                                            No dataset selected. Upload or select a dataset to view analysis!
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Contact Page -->
-    <div id="contact" class="page">
-        <section class="hero-section">
-            <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Get In Touch</h1>
-            <p style="font-size: 1.2rem; color: white; opacity: 0.9;"><b>Connect with the Delhi Bird Atlas team</b>
-            </p>
-        </section>
-
-        <div class="contact-section">
-            <h2 style="color: #FF6B35; margin-bottom: 30px; font-size: 2rem;">Contact Information</h2>
-
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span style="font-size: 2rem; color: #F7931E;">📧</span>
-                    <div>
-                        <strong>Email:</strong>
-                        <a href="mailto:pccf-gnctd@delhi.gov.in
-" style="color: #FF6B35; text-decoration: none;">pccf-gnctd@delhi.gov.in
-                        </a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <span style="font-size: 2rem; color: #F7931E;">📱</span>
-                    <div>
-                        <strong>Instagram:</strong>
-                        <a href="https://instagram.com/delhi_birdatlas" target="_blank"
-                            style="color: #FF6B35; text-decoration: none;">@delhi_birdatlas</a>
-                    </div>
-                </div>
-
-                <div class="contact-item">
-                    <span style="font-size: 2rem; color: #F7931E;">🌍</span>
-                    <div>
-                        <strong>Focus Area:</strong>
-                        Delhi & National Capital Region Bird Species
-                    </div>
-                </div>
-            </div>
-
-            <div
-                style="margin-top: 40px; padding: 30px; background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1)); border-radius: 15px;">
-                <h3 style="color: #FF6B35; margin-bottom: 15px;">About Delhi Bird Atlas</h3>
-                <p style="color: #666; line-height: 1.8;">
-                    <b>The Delhi Bird Atlas is a comprehensive initiative to document and analyze the avian
-                        biodiversity of Delhi and surrounding regions.
-                        Our platform provides researchers, bird watchers, and conservationists with powerful tools
-                        to
-                        visualize and understand bird distribution patterns.</b>
+        <!-- Contact Page -->
+        <div id="contact" class="page">
+            <section class="hero-section">
+                <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Get In Touch</h1>
+                <p style="font-size: 1.2rem; color: white; opacity: 0.9;"><b>Connect with the Delhi Bird Atlas team</b>
                 </p>
-            </div>
+            </section>
 
-            <div style="margin-top: 30px;">
-                <a href="https://instagram.com/delhi_birdatlas" target="_blank" class="btn-primary">
-                    Follow Us on Instagram
-                </a>
-            </div>
-        </div>
-    </div>
+            <div class="contact-section">
+                <h2 style="color: #FF6B35; margin-bottom: 30px; font-size: 2rem;">Contact Information</h2>
 
-    <!-- Enhanced Export Modal -->
-    <div id="exportModal" class="export-modal">
-        <div class="export-modal-content">
-            <span class="close-modal" onclick="closeExportModal()">&times;</span>
-            <h2 style="color: #2E8B57; margin-bottom: 20px;">Choose Export Format</h2>
-
-            <div class="export-options">
-                <div class="export-option" onclick="exportCSV()">
-                    <div class="export-option-icon">📄</div>
-                    <div class="export-option-title">CSV Data Export</div>
-                    <div class="export-option-desc">Export raw species data in CSV format for analysis</div>
-                </div>
-
-                <div class="export-option" onclick="exportEnhanced()">
-                    <div class="export-option-icon">🗺️</div>
-                    <div class="export-option-title">Interactive HTML Export</div>
-                    <div class="export-option-desc">Generate interactive maps and dashboards as HTML files</div>
-                </div>
-            </div>
-
-            <div id="enhancedExportContent" style="display: none;">
-                <div class="export-preview">
-                    <h3 style="color: #2E8B57; text-align: center; margin-bottom: 20px;">Your Interactive Files Are
-                        Ready!</h3>
-
-                    <div id="previewStats" style="text-align: center; margin-bottom: 20px;">
-                        <!-- Stats populated by JS -->
-                    </div>
-
-                    <div id="previewFiles" class="preview-files">
-                        <!-- Files populated by JS -->
-                    </div>
-
-                    <div id="speciesSection" style="display: none;" class="species-section">
-                        <h4 style="color: #2E8B57; margin-bottom: 15px;">Species-Specific Interactive Heatmaps</h4>
-                        <div id="speciesGrid"
-                            style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; max-height: 300px; overflow-y: auto; padding: 15px; border: 1px solid #e9ecef; border-radius: 5px;">
-                            <!-- Species items populated by JS -->
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span style="font-size: 2rem; color: #F7931E;">📧</span>
+                        <div>
+                            <strong>Email:</strong>
+                            <a href="mailto:pccf-gnctd@delhi.gov.in
+" style="color: #FF6B35; text-decoration: none;">pccf-gnctd@delhi.gov.in
+                            </a>
                         </div>
-                        <div style="text-align: center; margin-top: 15px;">
-                            <button onclick="downloadAllSpecies()" class="download-btn" style="background: #6f42c1;">
-                                📦 Download All Species Maps
-                            </button>
+                    </div>
+
+                    <div class="contact-item">
+                        <span style="font-size: 2rem; color: #F7931E;">📱</span>
+                        <div>
+                            <strong>Instagram:</strong>
+                            <a href="https://instagram.com/delhi_birdatlas" target="_blank"
+                                style="color: #FF6B35; text-decoration: none;">@delhi_birdatlas</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span style="font-size: 2rem; color: #F7931E;">🌍</span>
+                        <div>
+                            <strong>Focus Area:</strong>
+                            Delhi & National Capital Region Bird Species
                         </div>
                     </div>
                 </div>
+
+                <div
+                    style="margin-top: 40px; padding: 30px; background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1)); border-radius: 15px;">
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">About Delhi Bird Atlas</h3>
+                    <p style="color: #666; line-height: 1.8;">
+                        <b>The Delhi Bird Atlas is a comprehensive initiative to document and analyze the avian
+                            biodiversity of Delhi and surrounding regions.
+                            Our platform provides researchers, bird watchers, and conservationists with powerful tools
+                            to
+                            visualize and understand bird distribution patterns.</b>
+                    </p>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="https://instagram.com/delhi_birdatlas" target="_blank" class="btn-primary">
+                        Follow Us on Instagram
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Nestlytics</h3>
-                <p>A comprehensive platform for analyzing Indian bird species distribution with interactive maps and
-                    statistical analysis tools.</p>
-                <div style="margin-top: 15px;">
-                    <a href="https://instagram.com/delhi_birdatlas" target="_blank"
-                        style="color: #FFD23F; text-decoration: none; font-size: 1.2rem;">📱 @delhi_birdatlas</a>
+        <!-- Enhanced Export Modal -->
+        <div id="exportModal" class="export-modal">
+            <div class="export-modal-content">
+                <span class="close-modal" onclick="closeExportModal()">&times;</span>
+                <h2 style="color: #2E8B57; margin-bottom: 20px;">Choose Export Format</h2>
+
+                <div class="export-options">
+                    <div class="export-option" onclick="exportCSV()">
+                        <div class="export-option-icon">📄</div>
+                        <div class="export-option-title">CSV Data Export</div>
+                        <div class="export-option-desc">Export raw species data in CSV format for analysis</div>
+                    </div>
+
+                    <div class="export-option" onclick="exportEnhanced()">
+                        <div class="export-option-icon">🗺️</div>
+                        <div class="export-option-title">Interactive HTML Export</div>
+                        <div class="export-option-desc">Generate interactive maps and dashboards as HTML files</div>
+                    </div>
+                </div>
+
+                <div id="enhancedExportContent" style="display: none;">
+                    <div class="export-preview">
+                        <h3 style="color: #2E8B57; text-align: center; margin-bottom: 20px;">Your Interactive Files Are
+                            Ready!</h3>
+
+                        <div id="previewStats" style="text-align: center; margin-bottom: 20px;">
+                            <!-- Stats populated by JS -->
+                        </div>
+
+                        <div id="previewFiles" class="preview-files">
+                            <!-- Files populated by JS -->
+                        </div>
+
+                        <div id="speciesSection" style="display: none;" class="species-section">
+                            <h4 style="color: #2E8B57; margin-bottom: 15px;">Species-Specific Interactive Heatmaps</h4>
+                            <div id="speciesGrid"
+                                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; max-height: 300px; overflow-y: auto; padding: 15px; border: 1px solid #e9ecef; border-radius: 5px;">
+                                <!-- Species items populated by JS -->
+                            </div>
+                            <div style="text-align: center; margin-top: 15px;">
+                                <button onclick="downloadAllSpecies()" class="download-btn"
+                                    style="background: #6f42c1;">
+                                    📦 Download All Species Maps
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Nestlytics</h3>
+                    <p>A comprehensive platform for analyzing Indian bird species distribution with interactive maps and
+                        statistical analysis tools.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://instagram.com/delhi_birdatlas" target="_blank"
+                            style="color: #FFD23F; text-decoration: none; font-size: 1.2rem;">📱 @delhi_birdatlas</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Platform Features</h3>
+                    <ul>
+                        <li>Interactive species distribution maps</li>
+                        <li>Advanced heatmap visualizations</li>
+                        <li>Statistical analysis and reporting</li>
+                        <li>CSV/Excel data import</li>
+                        <li>KML/KMZ boundary support</li>
+                        <li>Downloadable HTML reports</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('documentation')">Data Format
+                                Guide</a></li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('tutorials')">How to Use</a></li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('bird-identification')">Bird ID
+                                Guide</a></li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('methodology')">Research
+                                Methodology</a></li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('publications')">Publications</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal & Support</h3>
+                    <ul>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('privacy')">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('terms')">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('data-usage')">Data Usage Policy</a>
+                        </li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('support')">Technical Support</a>
+                        </li>
+                        <li><a href="javascript:void(0)" onclick="showResourcePage('feedback')">Feedback &
+                                Suggestions</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <div class="footer-section">
-                <h3>Platform Features</h3>
-                <ul>
-                    <li>Interactive species distribution maps</li>
-                    <li>Advanced heatmap visualizations</li>
-                    <li>Statistical analysis and reporting</li>
-                    <li>CSV/Excel data import</li>
-                    <li>KML/KMZ boundary support</li>
-                    <li>Downloadable HTML reports</li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nestyltics : Bird Species Database Platform. Empowering avian biodiversity research and
+                    conservation
+                    efforts across India.</p>
             </div>
-
-            <div class="footer-section">
-                <h3>Resources</h3>
-                <ul>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('documentation')">Data Format
-                            Guide</a></li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('tutorials')">How to Use</a></li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('bird-identification')">Bird ID
-                            Guide</a></li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('methodology')">Research
-                            Methodology</a></li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('publications')">Publications</a>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h3>Legal & Support</h3>
-                <ul>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('privacy')">Privacy Policy</a></li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('terms')">Terms of Service</a></li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('data-usage')">Data Usage Policy</a>
-                    </li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('support')">Technical Support</a>
-                    </li>
-                    <li><a href="javascript:void(0)" onclick="showResourcePage('feedback')">Feedback &
-                            Suggestions</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Nestyltics : Bird Species Database Platform. Empowering avian biodiversity research and
-                conservation
-                efforts across India.</p>
-        </div>
-    </footer>
+        </footer>
     </div>
 
     <script>
