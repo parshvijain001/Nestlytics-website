@@ -1004,19 +1004,40 @@
                 padding-top: 15px;
             }
 
-            /* Summary Statistics box fixes */
+            /* Better Summary Statistics mobile styling */
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+
             .stat-card {
-                padding: 15px 10px;
+                padding: 18px 12px;
             }
 
             .stat-value {
-                font-size: 1.3rem !important;
-                margin-bottom: 5px;
+                font-size: 1.6rem !important;
+                margin-bottom: 6px;
             }
 
             .stat-label {
-                font-size: 0.75rem !important;
-                line-height: 1.3;
+                font-size: 0.82rem !important;
+                line-height: 1.4;
+            }
+
+            /* For very small phones, stack cards vertically */
+            @media (max-width: 480px) {
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                    gap: 10px;
+                }
+
+                .stat-card {
+                    padding: 20px 15px;
+                }
+
+                .stat-value {
+                    font-size: 1.8rem !important;
+                }
             }
 
             /* Make stats grid single column on very small phones */
