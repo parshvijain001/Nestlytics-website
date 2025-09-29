@@ -958,6 +958,44 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 20px 12px;
+                min-height: 110px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .stat-value {
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+                line-height: 1.2;
+            }
+
+            .stat-label {
+                font-size: 0.85rem;
+                line-height: 1.3;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .stat-card {
+                padding: 22px 15px;
+            }
+        }
+
+
         /* Tablet specific styles */
         @media (min-width: 769px) and (max-width: 1024px) {
             .main-content {
@@ -1004,49 +1042,40 @@
                 padding-top: 15px;
             }
 
-            /* Better Summary Statistics mobile styling */
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
+            /* Bird collage responsive */
+            .bird-collage {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
             }
 
-            .stat-card {
-                padding: 18px 12px;
+            @media (max-width: 768px) {
+                .bird-collage {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 15px;
+                }
             }
 
-            .stat-value {
-                font-size: 1.6rem !important;
-                margin-bottom: 6px;
-            }
-
-            .stat-label {
-                font-size: 0.82rem !important;
-                line-height: 1.4;
-            }
-
-            /* For very small phones, stack cards vertically */
             @media (max-width: 480px) {
-                .stats-grid {
-                    grid-template-columns: 1fr;
-                    gap: 10px;
+                .bird-collage {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 12px;
                 }
 
-                .stat-card {
-                    padding: 20px 15px;
+                .bird-card {
+                    min-height: auto;
                 }
 
-                .stat-value {
-                    font-size: 1.8rem !important;
+                .bird-image {
+                    height: 150px;
+                    font-size: 3rem;
+                }
+
+                .bird-name {
+                    font-size: 0.9rem;
+                    padding: 10px 5px;
                 }
             }
-
-
-        }
-
-        .responsive-img {
-            max-width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 
@@ -1080,7 +1109,7 @@
                 </p>
 
                 <div class="bird-collage">
-                
+
                     <div class="bird-card">
                         <div class="bird-image">
                             <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/133718611/1200"
@@ -1109,11 +1138,11 @@
                         </div>
                         <div class="bird-name">Asian Koel</div>
                     </div>
-                    
+
                     <div class="bird-card">
                         <div class="bird-image">
                             <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126370921/900"
-                                class="responsive-img"">
+                                class="responsive-img">
                         </div>
                         <div class=" bird-name">Indian Robin
                         </div>
@@ -1194,7 +1223,7 @@
                             <div class="stat-card">
                                 <div class="stat-value">0</div>
                                 <div class="stat-label"><b>Total Observations</b></div>
-                                <div>class="stat-card"></div>
+                                <div class="stat-card"></div>
                                 <div class="stat-value">0</div>
                                 <div class="stat-label"><b>Unique Species</b></div>
                             </div>
