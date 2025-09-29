@@ -976,6 +976,55 @@
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            /* Footer specific mobile fixes */
+            .footer-section {
+                padding-left: 0;
+                text-align: center;
+            }
+
+            .footer-section h3 {
+                font-size: 1.05rem;
+                margin-bottom: 15px;
+            }
+
+            .footer-section p {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+
+            .footer-section ul li {
+                font-size: 0.85rem;
+                margin-bottom: 8px;
+                line-height: 1.4;
+            }
+
+            .footer-bottom {
+                font-size: 0.8rem;
+                padding-top: 15px;
+            }
+
+            /* Summary Statistics box fixes */
+            .stat-card {
+                padding: 15px 10px;
+            }
+
+            .stat-value {
+                font-size: 1.3rem !important;
+                margin-bottom: 5px;
+            }
+
+            .stat-label {
+                font-size: 0.75rem !important;
+                line-height: 1.3;
+            }
+
+            /* Make stats grid single column on very small phones */
+            @media (max-width: 480px) {
+                .stats-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
         }
     </style>
 </head>
@@ -1134,19 +1183,19 @@
                         <div class="stats-grid" id="statsGrid">
                             <div class="stat-card">
                                 <div class="stat-value">0</div>
-                                <div class="stat-label">Total Observations</div>
+                                <div class="stat-label"><b>Total Observations</b></div>
                             </div>
                             <div class="stat-card">
                                 <div class="stat-value">0</div>
-                                <div class="stat-label">Unique Species</div>
+                                <div class="stat-label"><b>Unique Species</b></div>
                             </div>
                             <div class="stat-card">
                                 <div class="stat-value">0</div>
-                                <div class="stat-label">Survey Locations</div>
+                                <div class="stat-label"><b>Survey Locations</b></div>
                             </div>
                             <div class="stat-card">
                                 <div class="stat-value">0/km²</div>
-                                <div class="stat-label">Avg. Density</div>
+                                <div class="stat-label"><b>Avg. Density</b></div>
                             </div>
                         </div>
                     </div>
