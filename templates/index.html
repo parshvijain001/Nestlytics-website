@@ -722,8 +722,107 @@
         }
 
         @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .site-logo {
+                font-size: 1.3rem;
+            }
+
+            .nav-menu {
+                flex-direction: row;
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-menu a {
+                font-size: 0.9rem;
+                padding: 8px 15px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .bird-collage {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
             .main-content {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .sidebar {
+                order: 2;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                order: 1;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            .section-title {
+                font-size: 1.1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .map-controls {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .control-button,
+            #boundarySelector {
+                width: 100%;
+            }
+
+            #map {
+                height: 300px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .stat-card {
+                padding: 15px;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
+            }
+
+            .chart-container {
+                height: 250px;
+            }
+
+            .data-table {
+                font-size: 0.85rem;
+            }
+
+            .data-table th,
+            .data-table td {
+                padding: 8px;
             }
 
             .export-options {
@@ -732,6 +831,57 @@
 
             .preview-files {
                 grid-template-columns: 1fr;
+            }
+
+            .export-modal-content {
+                width: 95%;
+                margin: 2% auto;
+                padding: 20px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .footer-section {
+                padding-left: 0;
+            }
+
+            .contact-section {
+                padding: 20px;
+            }
+
+            .contact-item {
+                font-size: 1rem;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #legendItems {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        /* Tablet specific styles */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 300px 1fr;
+                gap: 15px;
+            }
+
+            .bird-collage {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -762,7 +912,8 @@
                 <h1 class="hero-title">Birds' Species Database</h1>
                 <p class="hero-subtitle"><b>Discover the Rich Avian Biodiversity of India</b></p>
                 <p class="hero-description">
-                    <b>Explore, analyze, and visualize bird species distribution patterns across India with comprehensive statistical analysis and interactive mapping tools.</b>
+                    <b>Explore, analyze, and visualize bird species distribution patterns across India with
+                        comprehensive statistical analysis and interactive mapping tools.</b>
                 </p>
 
                 <div class="bird-collage">
@@ -858,7 +1009,7 @@
                             <span>🌍 <b>Species Distribution Map</b></span>
                             <div class="map-controls">
                                 <button id="toggleHeatmap" class="control-button" onclick="toggleHeatmapMode()">🔥
-                                   <b>Heatmap</b> </button>
+                                    <b>Heatmap</b> </button>
                                 <button id="toggleMarkers" class="control-button active" onclick="toggleMarkerMode()">📍
                                     <b>Markers</b></button>
                                 <button id="fitBounds" class="control-button" onclick="fitMapBounds()">🎯 <b>Fit</b>
@@ -945,7 +1096,8 @@
         <div id="contact" class="page">
             <section class="hero-section">
                 <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Get In Touch</h1>
-                <p style="font-size: 1.2rem; color: white; opacity: 0.9;"><b>Connect with the Delhi Bird Atlas team</b></p>
+                <p style="font-size: 1.2rem; color: white; opacity: 0.9;"><b>Connect with the Delhi Bird Atlas team</b>
+                </p>
             </section>
 
             <div class="contact-section">
@@ -957,9 +1109,8 @@
                         <div>
                             <strong>Email:</strong>
                             <a href="mailto:pccf-gnctd@delhi.gov.in
-"
-                                style="color: #FF6B35; text-decoration: none;">pccf-gnctd@delhi.gov.in
-</a>
+" style="color: #FF6B35; text-decoration: none;">pccf-gnctd@delhi.gov.in
+                            </a>
                         </div>
                     </div>
 
@@ -986,9 +1137,10 @@
                     <h3 style="color: #FF6B35; margin-bottom: 15px;">About Delhi Bird Atlas</h3>
                     <p style="color: #666; line-height: 1.8;">
                         <b>The Delhi Bird Atlas is a comprehensive initiative to document and analyze the avian
-                        biodiversity of Delhi and surrounding regions.
-                        Our platform provides researchers, bird watchers, and conservationists with powerful tools to
-                        visualize and understand bird distribution patterns.</b>
+                            biodiversity of Delhi and surrounding regions.
+                            Our platform provides researchers, bird watchers, and conservationists with powerful tools
+                            to
+                            visualize and understand bird distribution patterns.</b>
                     </p>
                 </div>
 
@@ -1107,7 +1259,8 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2024 Nestyltics : Bird Species Database Platform. Empowering avian biodiversity research and conservation
+                <p>&copy; 2024 Nestyltics : Bird Species Database Platform. Empowering avian biodiversity research and
+                    conservation
                     efforts across India.</p>
             </div>
         </footer>
