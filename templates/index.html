@@ -495,6 +495,125 @@
             opacity: 0.9;
         }
 
+        /* Enhanced Export Modal */
+        .export-modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .export-modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-modal:hover {
+            color: #000;
+        }
+
+        .export-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .export-option {
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .export-option:hover {
+            border-color: #32CD32;
+            background: rgba(50, 205, 50, 0.1);
+        }
+
+        .export-option-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #2E8B57;
+        }
+
+        .export-option-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2E8B57;
+            margin-bottom: 10px;
+        }
+
+        .export-option-desc {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .export-preview {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border: 2px solid #32CD32;
+        }
+
+        .preview-files {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .preview-file {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .preview-file h4 {
+            color: #2E8B57;
+            margin-bottom: 10px;
+        }
+
+        .download-btn {
+            background: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .download-btn:hover {
+            background: #218838;
+        }
+
         .btn-primary {
             background: linear-gradient(45deg, #FF6B35, #F7931E);
             color: white;
@@ -629,6 +748,20 @@
             .data-table th,
             .data-table td {
                 padding: 8px 4px;
+            }
+
+            .export-options {
+                grid-template-columns: 1fr;
+            }
+
+            .preview-files {
+                grid-template-columns: 1fr;
+            }
+
+            .export-modal-content {
+                width: 95%;
+                margin: 2% auto;
+                padding: 20px;
             }
 
             .footer-content {
