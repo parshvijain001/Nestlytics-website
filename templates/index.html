@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bird Species Database - Professional platform for analyzing Indian bird species distribution with interactive maps and statistical analysis.">
-    <meta name="keywords" content="bird species, Indian birds, biodiversity, bird watching, species database, Delhi bird atlas">
+    <meta name="description"
+        content="Bird Species Database - Professional platform for analyzing Indian bird species distribution with interactive maps and statistical analysis.">
+    <meta name="keywords"
+        content="bird species, Indian birds, biodiversity, bird watching, species database, Delhi bird atlas">
     <title>Nestlytics - Indian Avian Biodiversity Analysis</title>
     <link rel="canonical" href="https://yourdomain.com">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦅</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦅</text></svg>">
 
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -32,8 +36,15 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         /* Header */
@@ -1099,6 +1110,57 @@
                     conservation efforts across India.</p>
             </div>
         </footer>
+
+        <!-- Enhanced Export Modal -->
+        <div id="exportModal" class="export-modal">
+            <div class="export-modal-content">
+                <span class="close-modal" onclick="closeExportModal()">&times;</span>
+                <h2 style="color: #2E8B57; margin-bottom: 20px;">Choose Export Format</h2>
+
+                <div class="export-options">
+                    <div class="export-option" onclick="exportCSV()">
+                        <div class="export-option-icon">📄</div>
+                        <div class="export-option-title">CSV Data Export</div>
+                        <div class="export-option-desc">Export raw species data in CSV format for analysis</div>
+                    </div>
+
+                    <div class="export-option" onclick="exportEnhanced()">
+                        <div class="export-option-icon">🗺️</div>
+                        <div class="export-option-title">Interactive HTML Export</div>
+                        <div class="export-option-desc">Generate interactive maps and dashboards as HTML files</div>
+                    </div>
+                </div>
+
+                <div id="enhancedExportContent" style="display: none;">
+                    <div class="export-preview">
+                        <h3 style="color: #2E8B57; text-align: center; margin-bottom: 20px;">Your Interactive Files Are
+                            Ready!</h3>
+
+                        <div id="previewStats" style="text-align: center; margin-bottom: 20px;">
+                            <!-- Stats populated by JS -->
+                        </div>
+
+                        <div id="previewFiles" class="preview-files">
+                            <!-- Files populated by JS -->
+                        </div>
+
+                        <div id="speciesSection" style="display: none;" class="species-section">
+                            <h4 style="color: #2E8B57; margin-bottom: 15px;">Species-Specific Interactive Heatmaps</h4>
+                            <div id="speciesGrid"
+                                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; max-height: 300px; overflow-y: auto; padding: 15px; border: 1px solid #e9ecef; border-radius: 5px;">
+                                <!-- Species items populated by JS -->
+                            </div>
+                            <div style="text-align: center; margin-top: 15px;">
+                                <button onclick="downloadAllSpecies()" class="download-btn"
+                                    style="background: #6f42c1;">
+                                    📦 Download All Species Maps
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -1313,6 +1375,7 @@
                         <div class="dataset-stats">${dataset.total_records} records • ${dataset.unique_species} species</div>
                         <div class="dataset-actions">
                             <button class="btn-small btn-view" onclick="loadDataset('${dataset.id}')">👁️ View</button>
+                            <button class="btn-small btn-export-enhanced" onclick="openExportModal('${dataset.id}')">📦 Export</button>
                             <button class="btn-small btn-delete" onclick="deleteDataset('${dataset.id}')">🗑️ Delete</button>
                         </div>
                     </div>
@@ -1522,6 +1585,150 @@
                     if (alertDiv.parentNode) alertDiv.remove();
                 }, 4000);
             }
+        }
+
+        // Export Functions
+        let selectedExportDatasetId = null;
+        let currentExportData = null;
+
+        function openExportModal(datasetId) {
+            selectedExportDatasetId = datasetId;
+            document.getElementById('exportModal').style.display = 'block';
+            document.getElementById('enhancedExportContent').style.display = 'none';
+        }
+
+        function closeExportModal() {
+            document.getElementById('exportModal').style.display = 'none';
+            document.getElementById('enhancedExportContent').style.display = 'none';
+            selectedExportDatasetId = null;
+            currentExportData = null;
+        }
+
+        async function exportCSV() {
+            if (!selectedExportDatasetId) return;
+
+            try {
+                showAlert('Preparing CSV export...', 'success');
+                const link = document.createElement('a');
+                link.href = `/api/dataset/${selectedExportDatasetId}/export`;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                showAlert('CSV exported successfully!', 'success');
+                closeExportModal();
+            } catch (error) {
+                showAlert('Failed to export CSV', 'error');
+            }
+        }
+
+        async function exportEnhanced() {
+            if (!selectedExportDatasetId) {
+                showAlert('No dataset selected for export', 'error');
+                return;
+            }
+
+            try {
+                showAlert('Generating interactive HTML files...', 'success');
+
+                const response = await fetch(`/api/dataset/${selectedExportDatasetId}/export/enhanced`);
+                const result = await response.json();
+
+                if (result.success) {
+                    currentExportData = result;
+                    showExportPreview(result);
+                    document.getElementById('enhancedExportContent').style.display = 'block';
+                    showAlert('Interactive HTML files generated successfully!', 'success');
+                } else {
+                    showAlert('Failed to generate files: ' + result.message, 'error');
+                }
+            } catch (error) {
+                showAlert('Failed to generate interactive files: ' + error.message, 'error');
+            }
+        }
+
+        function showExportPreview(result) {
+            document.getElementById('previewStats').innerHTML = `
+                <h4 style="color: #2E8B57;">Dataset: ${result.dataset_name}</h4>
+                <p><strong>Total Observations:</strong> ${result.stats.total_observations.toLocaleString()} | 
+                <strong>Unique Species:</strong> ${result.stats.unique_species} | 
+                <strong>Survey Locations:</strong> ${result.stats.unique_locations}</p>
+            `;
+
+            document.getElementById('previewFiles').innerHTML = `
+                <div class="preview-file">
+                    <h4>Interactive Heatmap</h4>
+                    <p>Combined species density visualization</p>
+                    <button onclick="downloadFile('${result.files.interactive_heatmap}', 'interactive_heatmap.html')" class="download-btn">Download HTML</button>
+                </div>
+                <div class="preview-file">
+                    <h4>Interactive Dashboard</h4>
+                    <p>Complete analysis with markers and charts</p>
+                    <button onclick="downloadFile('${result.files.interactive_dashboard}', 'interactive_dashboard.html')" class="download-btn">Download HTML</button>
+                </div>
+            `;
+
+            if (result.files.species_heatmaps && Object.keys(result.files.species_heatmaps).length > 0) {
+                document.getElementById('speciesSection').style.display = 'block';
+
+                let speciesHTML = '';
+                for (const [species, filePath] of Object.entries(result.files.species_heatmaps)) {
+                    const shortName = species.length > 20 ? species.substring(0, 20) + '...' : species;
+                    const fileName = `${species.replace(/[^a-zA-Z0-9]/g, '_')}_heatmap.html`;
+                    speciesHTML += `
+                        <div style="background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; border: 1px solid #ddd;">
+                            <div style="font-size: 0.9rem; font-weight: 600; color: #2E8B57; margin-bottom: 8px;" title="${species}">${shortName}</div>
+                            <button onclick="downloadFile('${filePath}', '${fileName}')" class="download-btn" style="font-size: 0.8rem; padding: 5px 10px;">Download</button>
+                        </div>
+                    `;
+                }
+                document.getElementById('speciesGrid').innerHTML = speciesHTML;
+            } else {
+                document.getElementById('speciesSection').style.display = 'none';
+            }
+        }
+
+        function downloadFile(url, filename) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = filename;
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    URL.revokeObjectURL(link.href);
+                })
+                .catch(error => {
+                    console.error('Download failed:', error);
+                    showAlert('Download failed. Opening file in new tab instead.', 'error');
+                    window.open(url, '_blank');
+                });
+        }
+
+        function downloadAllSpecies() {
+            if (!currentExportData || !currentExportData.files.species_heatmaps) return;
+
+            const speciesFiles = Object.entries(currentExportData.files.species_heatmaps);
+            let downloadCount = 0;
+
+            speciesFiles.forEach(([species, filePath], index) => {
+                setTimeout(() => {
+                    const link = document.createElement('a');
+                    link.href = filePath;
+                    link.target = '_blank';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    downloadCount++;
+                    if (downloadCount === speciesFiles.length) {
+                        showAlert(`All ${speciesFiles.length} species maps downloaded!`, 'success');
+                    }
+                }, index * 300);
+            });
+
+            showAlert(`Downloading ${speciesFiles.length} species maps...`, 'success');
         }
 
         function showResourcePage(resourceType) {
