@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Bird Species Database - Professional platform for analyzing Indian bird species distribution with interactive maps and statistical analysis.">
+    <meta name="keywords" content="bird species, Indian birds, biodiversity, bird watching, species database, Delhi bird atlas">
     <title>Nestlytics - Indian Avian Biodiversity Analysis</title>
+    <link rel="canonical" href="https://yourdomain.com">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦅</text></svg>">
 
+    <!-- External Libraries -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -58,11 +61,12 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            text-decoration: none;
             font-size: 1.8rem;
             font-weight: bold;
             color: #FF6B35;
-            cursor: pointer;
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
         .site-logo:hover {
@@ -72,6 +76,7 @@
         .nav-menu {
             display: flex;
             gap: 20px;
+            align-items: center;
             list-style: none;
         }
 
@@ -130,6 +135,7 @@
         .hero-subtitle {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: white;
         }
 
         .hero-description {
@@ -185,7 +191,7 @@
             font-size: 1.1rem;
         }
 
-        /* Features Page */
+        /* Features Page Styles */
         .main-content {
             display: grid;
             grid-template-columns: 350px 1fr;
@@ -284,14 +290,21 @@
             transition: all 0.2s ease;
         }
 
-        .btn-view { background: #17a2b8; }
-        .btn-view:hover { background: #138496; }
-        .btn-export { background: #28a745; }
-        .btn-export:hover { background: #218838; }
-        .btn-export-enhanced { background: #fd7e14; }
-        .btn-export-enhanced:hover { background: #e55c0a; }
-        .btn-delete { background: #dc3545; }
-        .btn-delete:hover { background: #c82333; }
+        .btn-view {
+            background: #17a2b8;
+        }
+
+        .btn-view:hover {
+            background: #138496;
+        }
+
+        .btn-delete {
+            background: #dc3545;
+        }
+
+        .btn-delete:hover {
+            background: #c82333;
+        }
 
         .section {
             background: white;
@@ -379,8 +392,6 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            overflow-x: auto;
-            display: block;
         }
 
         .data-table th,
@@ -413,24 +424,6 @@
             border: 1px solid #f5c6cb;
         }
 
-        .btn-primary {
-            background: linear-gradient(45deg, #FF6B35, #F7931E);
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
-        }
-
         /* Contact Page */
         .contact-section {
             background: rgba(255, 255, 255, 0.95);
@@ -439,6 +432,10 @@
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             border: 3px solid #FF6B35;
+        }
+
+        .contact-info {
+            margin: 30px 0;
         }
 
         .contact-item {
@@ -484,6 +481,7 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
+            cursor: pointer;
         }
 
         .footer-section ul li a:hover {
@@ -495,6 +493,26 @@
             padding-top: 20px;
             text-align: center;
             opacity: 0.9;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(45deg, #F7931E, #FFD23F);
         }
 
         /* Mobile Responsiveness */
@@ -531,7 +549,6 @@
                 font-size: 0.95rem;
             }
 
-            /* Bird Collage - 2 columns on mobile */
             .bird-collage {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
@@ -546,7 +563,6 @@
                 padding: 10px;
             }
 
-            /* Features Page Mobile */
             .main-content {
                 grid-template-columns: 1fr;
             }
@@ -606,6 +622,8 @@
 
             .data-table {
                 font-size: 0.8rem;
+                display: block;
+                overflow-x: auto;
             }
 
             .data-table th,
@@ -624,7 +642,6 @@
             }
         }
 
-        /* Tablet */
         @media (min-width: 769px) and (max-width: 1024px) {
             .main-content {
                 grid-template-columns: 300px 1fr;
@@ -639,7 +656,6 @@
             }
         }
 
-        /* Very small phones */
         @media (max-width: 480px) {
             .bird-collage {
                 grid-template-columns: 1fr;
@@ -663,9 +679,10 @@
 
 <body>
     <div class="container">
+        <!-- Header -->
         <header class="site-header">
             <div class="header-container">
-                <div class="site-logo" onclick="if(typeof showPage !== 'undefined') showPage('home')">
+                <div class="site-logo" id="logoBtn">
                     <span>🦅</span>
                     <span>Nestlytics</span>
                 </div>
@@ -685,43 +702,50 @@
                 <h1 class="hero-title">Birds' Species Database</h1>
                 <p class="hero-subtitle"><b>Discover the Rich Avian Biodiversity of India</b></p>
                 <p class="hero-description">
-                    <b>Explore, analyze, and visualize bird species distribution patterns across India with comprehensive statistical analysis and interactive mapping tools.</b>
+                    <b>Explore, analyze, and visualize bird species distribution patterns across India with
+                        comprehensive statistical analysis and interactive mapping tools.</b>
                 </p>
 
                 <div class="bird-collage">
                     <div class="bird-card">
                         <div class="bird-image">
-                            <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/133718611/1200" alt="Asian Openbill">
+                            <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/133718611/1200"
+                                alt="Asian Openbill">
                         </div>
                         <div class="bird-name">Asian Openbill</div>
                     </div>
                     <div class="bird-card">
                         <div class="bird-image">
-                            <img src="https://www.allaboutbirds.org/guide/assets/photo/305880301-480px.jpg" alt="House Sparrow">
+                            <img src="https://www.allaboutbirds.org/guide/assets/photo/305880301-480px.jpg"
+                                alt="House Sparrow">
                         </div>
                         <div class="bird-name">House Sparrow</div>
                     </div>
                     <div class="bird-card">
                         <div class="bird-image">
-                            <img src="https://jeevoka.com/story-images/267-39384b09-87a8-4d6e-ac50-24db10105cfe.jpg" alt="Ashy Prinia">
+                            <img src="https://jeevoka.com/story-images/267-39384b09-87a8-4d6e-ac50-24db10105cfe.jpg"
+                                alt="Ashy Prinia">
                         </div>
                         <div class="bird-name">Ashy Prinia</div>
                     </div>
                     <div class="bird-card">
                         <div class="bird-image">
-                            <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/360494940/original.jpeg" alt="Asian Koel">
+                            <img src="https://inaturalist-open-data.s3.amazonaws.com/photos/360494940/original.jpeg"
+                                alt="Asian Koel">
                         </div>
                         <div class="bird-name">Asian Koel</div>
                     </div>
                     <div class="bird-card">
                         <div class="bird-image">
-                            <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126370921/900" alt="Indian Robin">
+                            <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/126370921/900"
+                                alt="Indian Robin">
                         </div>
                         <div class="bird-name">Indian Robin</div>
                     </div>
                     <div class="bird-card">
                         <div class="bird-image">
-                            <img src="https://www.10000birds.com/wp-content/uploads/2025/04/Indian-Peafowl_ASC1106-Enhanced-NR_Bundala-NP-Sri-Lanka-Mar-22-2025.jpg" alt="Indian Peafowl">
+                            <img src="https://www.10000birds.com/wp-content/uploads/2025/04/Indian-Peafowl_ASC1106-Enhanced-NR_Bundala-NP-Sri-Lanka-Mar-22-2025.jpg"
+                                alt="Indian Peafowl">
                         </div>
                         <div class="bird-name">Indian Peafowl</div>
                     </div>
@@ -737,7 +761,7 @@
 
             <div class="main-content">
                 <div class="sidebar">
-                    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                    <div class="upload-area" id="uploadArea">
                         <div class="upload-icon">📊</div>
                         <div class="upload-text"><b>Click to upload files</b></div>
                         <div class="upload-subtitle">Species data (CSV/Excel) + Study area boundaries (KML)</div>
@@ -759,14 +783,19 @@
                         <div class="section-title">
                             <span>🌍 <b>Species Distribution Map</b></span>
                             <div class="map-controls">
-                                <button id="toggleHeatmap" class="control-button" onclick="toggleHeatmapMode()">🔥 <b>Heatmap</b></button>
-                                <button id="toggleMarkers" class="control-button active" onclick="toggleMarkerMode()">📍 <b>Markers</b></button>
-                                <button id="fitBounds" class="control-button" onclick="fitMapBounds()">🎯 <b>Fit View</b></button>
-                                <select id="boundarySelector" class="control-button" onchange="applyBoundary()">
+                                <button id="toggleHeatmap" class="control-button">🔥
+                                    <b>Heatmap</b>
+                                </button>
+                                <button id="toggleMarkers" class="control-button active">📍
+                                    <b>Markers</b></button>
+                                <button id="fitBounds" class="control-button">🎯 <b>Fit
+                                        View</b></button>
+                                <select id="boundarySelector" class="control-button">
                                     <option value=""><b>Select Study Area</b></option>
                                 </select>
                             </div>
                         </div>
+
                         <div id="map"></div>
                     </div>
 
@@ -830,24 +859,56 @@
         <div id="contact" class="page">
             <section class="hero-section">
                 <h1 style="font-size: 3rem; color: white; margin-bottom: 20px;">Get In Touch</h1>
-                <p style="font-size: 1.2rem; color: white; opacity: 0.9;"><b>Connect with the Delhi Bird Atlas team</b></p>
+                <p style="font-size: 1.2rem; color: white; opacity: 0.9;"><b>Connect with the Delhi Bird Atlas team</b>
+                </p>
             </section>
 
             <div class="contact-section">
                 <h2 style="color: #FF6B35; margin-bottom: 30px; font-size: 2rem;">Contact Information</h2>
-                <div class="contact-item">
-                    <span style="font-size: 2rem;">📧</span>
-                    <div>
-                        <strong>Email:</strong>
-                        <a href="mailto:pccf-gnctd@delhi.gov.in" style="color: #FF6B35; text-decoration: none;">pccf-gnctd@delhi.gov.in</a>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span style="font-size: 2rem; color: #F7931E;">📧</span>
+                        <div>
+                            <strong>Email:</strong>
+                            <a href="mailto:pccf-gnctd@delhi.gov.in"
+                                style="color: #FF6B35; text-decoration: none;">pccf-gnctd@delhi.gov.in</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span style="font-size: 2rem; color: #F7931E;">📱</span>
+                        <div>
+                            <strong>Instagram:</strong>
+                            <a href="https://instagram.com/delhi_birdatlas" target="_blank"
+                                style="color: #FF6B35; text-decoration: none;">@delhi_birdatlas</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span style="font-size: 2rem; color: #F7931E;">🌍</span>
+                        <div>
+                            <strong>Focus Area:</strong>
+                            Delhi & National Capital Region Bird Species
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <span style="font-size: 2rem;">📱</span>
-                    <div>
-                        <strong>Instagram:</strong>
-                        <a href="https://instagram.com/delhi_birdatlas" target="_blank" style="color: #FF6B35; text-decoration: none;">@delhi_birdatlas</a>
-                    </div>
+
+                <div
+                    style="margin-top: 40px; padding: 30px; background: linear-gradient(45deg, rgba(255, 107, 53, 0.1), rgba(247, 147, 30, 0.1)); border-radius: 15px;">
+                    <h3 style="color: #FF6B35; margin-bottom: 15px;">About Delhi Bird Atlas</h3>
+                    <p style="color: #666; line-height: 1.8;">
+                        <b>The Delhi Bird Atlas is a comprehensive initiative to document and analyze the avian
+                            biodiversity of Delhi and surrounding regions. Our platform provides researchers, bird
+                            watchers, and conservationists with powerful tools to visualize and understand bird
+                            distribution patterns.</b>
+                    </p>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="https://instagram.com/delhi_birdatlas" target="_blank" class="btn-primary">
+                        Follow Us on Instagram
+                    </a>
                 </div>
             </div>
         </div>
@@ -857,8 +918,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Nestlytics</h3>
-                    <p>A comprehensive platform for analyzing Indian bird species distribution with interactive maps and statistical analysis tools.</p>
+                    <p>A comprehensive platform for analyzing Indian bird species distribution with interactive maps
+                        and statistical analysis tools.</p>
+                    <div style="margin-top: 15px;">
+                        <a href="https://instagram.com/delhi_birdatlas" target="_blank"
+                            style="color: #FFD23F; text-decoration: none; font-size: 1.2rem;">📱 @delhi_birdatlas</a>
+                    </div>
                 </div>
+
                 <div class="footer-section">
                     <h3>Platform Features</h3>
                     <ul>
@@ -866,26 +933,50 @@
                         <li>Advanced heatmap visualizations</li>
                         <li>Statistical analysis and reporting</li>
                         <li>CSV/Excel data import</li>
+                        <li>KML/KMZ boundary support</li>
+                        <li>Downloadable HTML reports</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a onclick="showResourcePage('documentation')">Data Format Guide</a></li>
+                        <li><a onclick="showResourcePage('tutorials')">How to Use</a></li>
+                        <li><a onclick="showResourcePage('bird-identification')">Bird ID Guide</a></li>
+                        <li><a onclick="showResourcePage('methodology')">Research Methodology</a></li>
+                        <li><a onclick="showResourcePage('publications')">Publications</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Legal & Support</h3>
+                    <ul>
+                        <li><a onclick="showResourcePage('privacy')">Privacy Policy</a></li>
+                        <li><a onclick="showResourcePage('terms')">Terms of Service</a></li>
+                        <li><a onclick="showResourcePage('data-usage')">Data Usage Policy</a></li>
+                        <li><a onclick="showResourcePage('support')">Technical Support</a></li>
+                        <li><a onclick="showResourcePage('feedback')">Feedback & Suggestions</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2024 Nestlytics - Bird Species Database Platform</p>
+                <p>&copy; 2024 Nestlytics : Bird Species Database Platform. Empowering avian biodiversity research and
+                    conservation efforts across India.</p>
             </div>
         </footer>
     </div>
 
     <script>
-        let map, heatmapLayer, markersLayer, currentData = [];
-        let speciesChart, currentMapMode = 'markers';
+        let map, heatmapLayer, markersLayer, boundaryLayer, currentDatasetId = null, currentData = [];
+        let speciesChart, currentMapMode = 'markers', availableBoundaries = [];
 
-        // Define showPage function first (before it's used in onclick)
         function showPage(pageId) {
             document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
             document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
-            
-            // Update active nav link
+
             const navLinks = {
                 'home': 'navHome',
                 'features': 'navFeatures',
@@ -904,19 +995,24 @@
         }
 
         function initMap() {
-            if (map) map.remove();
+            if (map) {
+                map.remove();
+            }
             map = L.map('map').setView([20.5937, 78.9629], 5);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap'
             }).addTo(map);
             markersLayer = L.layerGroup().addTo(map);
+            boundaryLayer = L.layerGroup().addTo(map);
         }
 
         function initChart() {
             const ctx = document.getElementById('speciesChart');
             if (!ctx) return;
 
-            if (speciesChart) speciesChart.destroy();
+            if (speciesChart) {
+                speciesChart.destroy();
+            }
 
             speciesChart = new Chart(ctx.getContext('2d'), {
                 type: 'pie',
@@ -933,7 +1029,21 @@
                             'rgba(78, 205, 196, 0.8)',
                             'rgba(255, 107, 107, 0.8)',
                             'rgba(78, 205, 132, 0.8)',
-                            'rgba(69, 183, 209, 0.8)'
+                            'rgba(69, 183, 209, 0.8)',
+                            'rgba(150, 206, 180, 0.8)',
+                            'rgba(255, 234, 167, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 107, 53, 1)',
+                            'rgba(247, 147, 30, 1)',
+                            'rgba(255, 210, 63, 1)',
+                            'rgba(6, 255, 165, 1)',
+                            'rgba(78, 205, 196, 1)',
+                            'rgba(255, 107, 107, 1)',
+                            'rgba(78, 205, 132, 1)',
+                            'rgba(69, 183, 209, 1)',
+                            'rgba(150, 206, 180, 1)',
+                            'rgba(255, 234, 167, 1)'
                         ],
                         borderWidth: 2
                     }]
@@ -946,7 +1056,20 @@
                             position: 'right',
                             labels: {
                                 boxWidth: 15,
-                                font: { size: 11 }
+                                font: {
+                                    size: 11
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function (context) {
+                                    const label = context.label || '';
+                                    const value = context.parsed;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
                             }
                         }
                     }
@@ -961,52 +1084,132 @@
         async function uploadFiles(files) {
             for (let file of files) {
                 try {
-                    showAlert('Uploading ' + file.name + '...', 'success');
+                    const fileType = file.name.split('.').pop().toUpperCase();
+                    const isBoundaryFile = ['KML', 'KMZ'].includes(fileType);
+
+                    showAlert(`Uploading ${file.name}...`, 'success');
 
                     const formData = new FormData();
                     formData.append('file', file);
-                    
-                    const response = await fetch('/api/upload', { 
-                        method: 'POST', 
-                        body: formData 
-                    });
-                    
+                    const response = await fetch('/api/upload', { method: 'POST', body: formData });
                     const result = await response.json();
 
                     if (result.success) {
-                        showAlert('File uploaded successfully!', 'success');
-                        if (result.dataset_id) {
-                            await loadDataset(result.dataset_id);
+                        if (result.is_boundary) {
+                            showAlert('✅ Boundary loaded successfully', 'success');
+                            await loadBoundaryList();
+                        } else {
+                            showAlert('✅ Species data loaded successfully', 'success');
+                            await loadDatasetsList();
+                            if (result.dataset_id) await loadDataset(result.dataset_id);
                         }
                     } else {
-                        showAlert('Error: ' + result.message, 'error');
+                        showAlert('❌ Error: ' + result.message, 'error');
                     }
                 } catch (error) {
-                    showAlert('Failed to upload ' + file.name, 'error');
-                    console.error('Upload error:', error);
+                    showAlert('❌ Failed to upload ' + file.name, 'error');
                 }
             }
             document.getElementById('fileInput').value = '';
         }
 
+        async function loadBoundaryList() {
+            try {
+                const response = await fetch('/api/boundaries');
+                const result = await response.json();
+                if (result.success) {
+                    availableBoundaries = result.boundaries;
+                    updateBoundarySelector();
+                }
+            } catch (error) {
+                console.error('Error loading boundaries:', error);
+            }
+        }
+
+        function updateBoundarySelector() {
+            const selector = document.getElementById('boundarySelector');
+            let html = '<option value="">Select Study Area</option>';
+            availableBoundaries.forEach(boundary => {
+                html += `<option value="${boundary.id}">${boundary.name}</option>`;
+            });
+            selector.innerHTML = html;
+        }
+
+        async function applyBoundary() {
+            const boundaryId = document.getElementById('boundarySelector').value;
+            boundaryLayer.clearLayers();
+
+            if (!boundaryId) return;
+
+            const boundary = availableBoundaries.find(b => b.id === boundaryId);
+            if (boundary && boundary.bounds && boundary.bounds.coordinates) {
+                const polygon = L.polygon(boundary.bounds.coordinates, {
+                    color: '#FF0000', weight: 3, opacity: 0.8,
+                    fillColor: '#FF0000', fillOpacity: 0.1
+                });
+                boundaryLayer.addLayer(polygon);
+
+                const bounds = L.latLngBounds([boundary.bounds.south, boundary.bounds.west],
+                    [boundary.bounds.north, boundary.bounds.east]);
+                map.fitBounds(bounds, { padding: [20, 20] });
+            }
+        }
+
+        async function loadDatasetsList() {
+            try {
+                const response = await fetch('/api/datasets');
+                const result = await response.json();
+                if (result.success) updateDatasetsList(result.datasets);
+            } catch (error) {
+                console.error('Error loading datasets:', error);
+            }
+        }
+
+        function updateDatasetsList(datasets) {
+            const container = document.getElementById('datasetsList');
+            if (datasets.length === 0) {
+                container.innerHTML = '<div style="text-align: center; color: #666; padding: 20px;">No datasets uploaded yet.</div>';
+                return;
+            }
+
+            let html = '';
+            datasets.forEach(dataset => {
+                html += `
+                    <div class="dataset-item">
+                        <div class="dataset-name">${dataset.name}</div>
+                        <div class="dataset-stats">${dataset.total_records} records • ${dataset.unique_species} species</div>
+                        <div class="dataset-actions">
+                            <button class="btn-small btn-view" onclick="loadDataset('${dataset.id}')">👁️ View</button>
+                            <button class="btn-small btn-delete" onclick="deleteDataset('${dataset.id}')">🗑️ Delete</button>
+                        </div>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
         async function loadDataset(datasetId) {
             try {
-                const response = await fetch('/api/dataset/' + datasetId + '/data');
+                const response = await fetch(`/api/dataset/${datasetId}/data`);
                 const result = await response.json();
 
                 if (result.success) {
+                    currentDatasetId = datasetId;
                     currentData = result.data || [];
+
                     updateVisualization();
-                    showAlert('Loaded dataset with ' + result.data.length + ' observations', 'success');
+                    showAlert(`📊 Loaded dataset with ${result.data.length} observations`, 'success');
                 }
             } catch (error) {
                 showAlert('Failed to load dataset', 'error');
-                console.error('Load error:', error);
             }
         }
 
         function updateVisualization() {
-            if (!currentData || currentData.length === 0) return;
+            if (!currentData || currentData.length === 0) {
+                updateStatistics(); updateChart(); updateTable();
+                return;
+            }
 
             markersLayer.clearLayers();
             if (heatmapLayer) map.removeLayer(heatmapLayer);
@@ -1017,39 +1220,76 @@
                     radius: 25, blur: 15, maxZoom: 10
                 }).addTo(map);
             } else {
+                const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7', '#FF8E53', '#6C5CE7', '#A29BFE', '#FD79A8', '#FDCB6E'];
+                const speciesColors = {};
+                const allSpecies = [...new Set(currentData.map(d => d.species))];
+                allSpecies.forEach((species, index) => {
+                    speciesColors[species] = colors[index % colors.length];
+                });
+
                 currentData.forEach(d => {
                     if (d.latitude && d.longitude) {
                         const marker = L.circleMarker([d.latitude, d.longitude], {
-                            radius: 8,
-                            fillColor: '#FF6B35',
+                            radius: Math.max(8, Math.min(d.count * 2, 15)),
+                            fillColor: speciesColors[d.species],
                             color: '#fff',
                             weight: 2,
                             opacity: 1,
                             fillOpacity: 0.8
                         });
 
-                        const popupContent = '<b>' + d.species + '</b><br>Count: ' + (d.count || 1);
-                        marker.bindPopup(popupContent);
+                        const popupContent = `
+                            <div style="font-family: Arial, sans-serif; min-width: 250px; max-width: 300px;">
+                                <h3 style="color: #2E8B57; margin: 0 0 12px 0; font-size: 18px; border-bottom: 2px solid #2E8B57; padding-bottom: 8px; text-align: center;">${d.species}</h3>
+                                <div style="font-size: 15px; line-height: 1.8;">
+                                    <div style="margin: 8px 0; padding: 6px; background: #f8f9fa; border-radius: 5px;">
+                                        <strong style="color: #666;">Count:</strong> 
+                                        <span style="color: #2E8B57; font-weight: bold; font-size: 16px;">${d.count || 1}</span>
+                                    </div>
+                                    ${d.location ? `<div style="margin: 8px 0; padding: 6px; background: #f8f9fa; border-radius: 5px;">
+                                        <strong style="color: #666;">Location:</strong> ${d.location}
+                                    </div>` : ''}
+                                    <div style="margin: 8px 0; padding: 6px; background: #f8f9fa; border-radius: 5px;">
+                                        <strong style="color: #666;">Coordinates:</strong><br>
+                                        Lat: ${d.latitude.toFixed(6)}°<br>
+                                        Lng: ${d.longitude.toFixed(6)}°
+                                    </div>
+                                    ${d.date ? `<div style="margin: 8px 0; padding: 6px; background: #f8f9fa; border-radius: 5px;">
+                                        <strong style="color: #666;">Date:</strong> ${d.date}
+                                    </div>` : ''}
+                                </div>
+                            </div>
+                        `;
+
+                        marker.bindPopup(popupContent, {
+                            maxWidth: 320,
+                            minWidth: 250,
+                            maxHeight: 400,
+                            autoPan: true,
+                            closeButton: true,
+                            autoClose: false,
+                            closeOnEscapeKey: true
+                        });
+
                         markersLayer.addLayer(marker);
                     }
                 });
             }
 
-            updateStatistics();
-            updateChart();
-            updateTable();
+            updateStatistics(); updateChart(); updateTable();
         }
 
         function updateStatistics() {
             const totalObs = currentData.reduce((sum, d) => sum + (d.count || 1), 0);
             const uniqueSpecies = [...new Set(currentData.map(d => d.species))].length;
-            const uniqueLocations = [...new Set(currentData.map(d => d.latitude + ',' + d.longitude))].length;
+            const uniqueLocations = [...new Set(currentData.map(d => `${d.latitude},${d.longitude}`))].length;
+            const avgDensity = uniqueLocations > 0 ? (totalObs / uniqueLocations).toFixed(1) : '0';
 
             document.getElementById('statsGrid').innerHTML = `
                 <div class="stat-card"><div class="stat-value">${totalObs.toLocaleString()}</div><div class="stat-label">Total Observations</div></div>
                 <div class="stat-card"><div class="stat-value">${uniqueSpecies}</div><div class="stat-label">Unique Species</div></div>
                 <div class="stat-card"><div class="stat-value">${uniqueLocations}</div><div class="stat-label">Survey Locations</div></div>
-                <div class="stat-card"><div class="stat-value">${(totalObs/uniqueLocations).toFixed(1)}/km²</div><div class="stat-label">Avg. Density</div></div>
+                <div class="stat-card"><div class="stat-value">${avgDensity}/km²</div><div class="stat-label">Avg. Density</div></div>
             `;
         }
 
@@ -1061,7 +1301,7 @@
             });
 
             const sorted = Object.entries(speciesStats).sort((a, b) => b[1] - a[1]).slice(0, 10);
-            speciesChart.data.labels = sorted.map(s => s[0]);
+            speciesChart.data.labels = sorted.map(s => s[0].length > 15 ? s[0].substring(0, 15) + '...' : s[0]);
             speciesChart.data.datasets[0].data = sorted.map(s => s[1]);
             speciesChart.update();
         }
@@ -1077,11 +1317,15 @@
             const sortedSpecies = Object.entries(speciesStats).sort((a, b) => b[1].count - a[1].count);
             let tableHTML = '<thead><tr><th>Species</th><th>Total Count</th><th>Observations</th><th>Avg. per Observation</th><th>Density</th></tr></thead><tbody>';
 
-            sortedSpecies.forEach(([species, stats]) => {
-                const avgPerObs = (stats.count / stats.observations).toFixed(1);
-                const density = (stats.count / Math.max(stats.observations, 1)).toFixed(2);
-                tableHTML += '<tr><td><strong>' + species + '</strong></td><td>' + stats.count + '</td><td>' + stats.observations + '</td><td>' + avgPerObs + '</td><td>' + density + '</td></tr>';
-            });
+            if (sortedSpecies.length === 0) {
+                tableHTML += '<tr><td colspan="5" style="text-align: center; color: #999; padding: 30px;">No data to display</td></tr>';
+            } else {
+                sortedSpecies.forEach(([species, stats]) => {
+                    const avgPerObs = (stats.count / stats.observations).toFixed(1);
+                    const density = (stats.count / Math.max(stats.observations, 1)).toFixed(2);
+                    tableHTML += `<tr><td><strong>${species}</strong></td><td>${stats.count}</td><td>${stats.observations}</td><td>${avgPerObs}</td><td>${density}</td></tr>`;
+                });
+            }
             tableHTML += '</tbody>';
             document.getElementById('dataTable').innerHTML = tableHTML;
         }
@@ -1107,14 +1351,35 @@
             updateVisualization();
         }
 
-        function applyBoundary() {
-            // Boundary functionality to be implemented with backend
+        async function deleteDataset(datasetId) {
+            if (!confirm('Are you sure you want to delete this dataset?')) return;
+
+            try {
+                const response = await fetch(`/api/dataset/${datasetId}/delete`, { method: 'DELETE' });
+                const result = await response.json();
+
+                if (result.success) {
+                    showAlert('Dataset deleted successfully', 'success');
+                    if (currentDatasetId === datasetId) {
+                        currentDatasetId = null;
+                        currentData = [];
+                        markersLayer.clearLayers();
+                        if (heatmapLayer) map.removeLayer(heatmapLayer);
+                        updateStatistics();
+                        updateChart();
+                        updateTable();
+                    }
+                    await loadDatasetsList();
+                }
+            } catch (error) {
+                showAlert('Failed to delete dataset', 'error');
+            }
         }
 
         function showAlert(message, type) {
             const alertContainer = document.getElementById('alertContainer');
             const alertDiv = document.createElement('div');
-            alertDiv.className = 'alert alert-' + type;
+            alertDiv.className = `alert alert-${type}`;
             alertDiv.innerHTML = message;
             alertContainer.innerHTML = '';
             alertContainer.appendChild(alertDiv);
@@ -1126,28 +1391,122 @@
             }
         }
 
+        function showResourcePage(resourceType) {
+            const resourceContent = {
+                'documentation': {
+                    title: 'Data Format Guide',
+                    content: `<h3>Supported File Formats</h3><h4>Species Data Files:</h4><ul><li><strong>CSV Files:</strong> Comma-separated values with proper headers</li><li><strong>Excel Files:</strong> .xlsx or .xls format</li></ul><h4>Required Columns:</h4><ul><li><strong>Species:</strong> Scientific or common name</li><li><strong>Latitude:</strong> Decimal degrees</li><li><strong>Longitude:</strong> Decimal degrees</li><li><strong>Count:</strong> Number of individuals (optional, defaults to 1)</li><li><strong>Date:</strong> Observation date (optional)</li><li><strong>Location:</strong> Place name (optional)</li></ul><h4>Boundary Files:</h4><ul><li><strong>KML Files:</strong> Google Earth format for study area boundaries</li><li><strong>KMZ Files:</strong> Compressed KML files</li></ul>`
+                },
+                'tutorials': {
+                    title: 'How to Use',
+                    content: `<h3>Getting Started</h3><ol><li><strong>Upload Data:</strong> Go to Features page and click the upload area</li><li><strong>Select Files:</strong> Choose your CSV/Excel files with species data</li><li><strong>Add Boundaries:</strong> Optionally upload KML files for study areas</li><li><strong>View Analysis:</strong> Explore maps, charts, and statistics</li><li><strong>Export Results:</strong> Generate interactive reports</li></ol><h3>Map Controls</h3><ul><li><strong>Markers View:</strong> See individual observation points</li><li><strong>Heatmap View:</strong> Visualize species density</li><li><strong>Fit View:</strong> Zoom to show all data points</li><li><strong>Study Areas:</strong> Select boundaries to overlay</li></ul>`
+                },
+                'bird-identification': {
+                    title: 'Bird ID Guide',
+                    content: `<h3>Common Indian Bird Species</h3><h4>Resident Species:</h4><ul><li><strong>House Sparrow (Passer domesticus):</strong> Small brown bird, common in urban areas</li><li><strong>Indian Robin (Copsychus fulicatus):</strong> Black with white patches, distinctive upright tail</li><li><strong>Asian Koel (Eudynamys scolopaceus):</strong> Black male, brown spotted female</li><li><strong>Rose-ringed Parakeet (Psittacula krameri):</strong> Green with red beak</li><li><strong>Spot-billed Duck (Anas poecilorhyncha):</strong> Brown duck with yellow-tipped bill</li></ul><h4>Identification Tips:</h4><ul><li>Note size, color patterns, and behavior</li><li>Observe habitat preferences</li><li>Listen to calls and songs</li><li>Check for seasonal variations</li></ul>`
+                },
+                'methodology': {
+                    title: 'Research Methodology',
+                    content: `<h3>Data Collection Standards</h3><ul><li><strong>Point Counts:</strong> Fixed duration observations at specific locations</li><li><strong>Transect Surveys:</strong> Linear sampling along predetermined routes</li><li><strong>Grid Sampling:</strong> Systematic coverage of study areas</li><li><strong>GPS Accuracy:</strong> Minimum 3-meter precision for location data</li></ul><h3>Statistical Analysis</h3><ul><li><strong>Species Richness:</strong> Total number of species recorded</li><li><strong>Abundance:</strong> Count of individuals per species</li><li><strong>Density Mapping:</strong> Spatial distribution analysis</li><li><strong>Diversity Indices:</strong> Shannon-Weaver, Simpson's indices</li></ul>`
+                },
+                'publications': {
+                    title: 'Publications',
+                    content: `<h3>Delhi Bird Atlas Publications</h3><ul><li><strong>"Avian Diversity of Delhi NCR"</strong> - Comprehensive species inventory</li><li><strong>"Urban Bird Distribution Patterns"</strong> - Spatial analysis study</li><li><strong>"Seasonal Migration Patterns"</strong> - Temporal analysis</li><li><strong>"Conservation Status Assessment"</strong> - Threat analysis</li></ul><h3>Data Sharing</h3><p>Our research data contributes to:</p><ul><li>eBird global database</li><li>Biodiversity conservation efforts</li><li>Academic research collaborations</li><li>Environmental impact assessments</li></ul>`
+                },
+                'privacy': {
+                    title: 'Privacy Policy',
+                    content: `<h3>Data Collection</h3><p>We collect only the data you voluntarily provide:</p><ul><li>Species observation data from uploaded files</li><li>Geographic coordinates</li><li>Observation dates and locations</li></ul><h3>Data Usage</h3><ul><li>Processing and analysis for biodiversity research</li><li>Generating maps and statistical reports</li><li>Contributing to conservation efforts</li></ul><h3>Data Storage</h3><ul><li>Data is stored temporarily during your session</li><li>No personal information is permanently stored</li><li>You can delete your data at any time</li></ul>`
+                },
+                'terms': {
+                    title: 'Terms of Service',
+                    content: `<h3>Acceptable Use</h3><ul><li>Use the platform for legitimate research purposes</li><li>Provide accurate species and location data</li><li>Respect intellectual property rights</li><li>Do not upload malicious or inappropriate content</li></ul><h3>Data Responsibility</h3><ul><li>You are responsible for the accuracy of uploaded data</li><li>Ensure you have rights to share the data</li><li>Verify species identifications before submission</li></ul><h3>Platform Availability</h3><ul><li>Service provided "as is" without warranties</li><li>We strive for 99% uptime but cannot guarantee availability</li><li>Regular maintenance may cause temporary interruptions</li></ul>`
+                },
+                'data-usage': {
+                    title: 'Data Usage Policy',
+                    content: `<h3>Research Applications</h3><ul><li><strong>Biodiversity Assessment:</strong> Species richness and distribution analysis</li><li><strong>Conservation Planning:</strong> Identifying priority areas for protection</li><li><strong>Environmental Monitoring:</strong> Tracking ecosystem health</li><li><strong>Climate Studies:</strong> Understanding species response to change</li></ul><h3>Data Quality Standards</h3><ul><li>Coordinate accuracy within 10 meters</li><li>Valid taxonomic names required</li><li>Observation dates in standard format</li><li>Quality control checks performed automatically</li></ul>`
+                },
+                'support': {
+                    title: 'Technical Support',
+                    content: `<h3>Common Issues</h3><h4>File Upload Problems:</h4><ul><li>Ensure files are in CSV, Excel, KML, or KMZ format</li><li>Check that required columns are present</li><li>Verify file size is under 100MB</li><li>Remove special characters from file names</li></ul><h4>Map Display Issues:</h4><ul><li>Check internet connection</li><li>Refresh the page if map doesn't load</li><li>Ensure browser JavaScript is enabled</li><li>Try a different browser if problems persist</li></ul><h3>Contact Support</h3><p>For technical issues, contact us at:</p><ul><li>Email: pccf-gnctd@delhi.gov.in</li><li>Instagram: @delhi_birdatlas</li></ul>`
+                },
+                'feedback': {
+                    title: 'Feedback & Suggestions',
+                    content: `<h3>We Value Your Input</h3><p>Help us improve the Bird Species Database platform:</p><h4>Feature Requests:</h4><ul><li>Suggest new analysis tools</li><li>Request additional export formats</li><li>Propose visualization improvements</li><li>Recommend new bird identification features</li></ul><h4>Bug Reports:</h4><ul><li>Describe the issue clearly</li><li>Include browser and operating system</li><li>Provide steps to reproduce the problem</li><li>Attach screenshots if helpful</li></ul><h3>Contact Methods</h3><ul><li><strong>Email:</strong> pccf-gnctd@delhi.gov.in</li><li><strong>Instagram:</strong> @delhi_birdatlas</li></ul><p>We review all feedback and respond within 48 hours.</p>`
+                }
+            };
+
+            const resource = resourceContent[resourceType];
+            if (resource) {
+                const modalHTML = `
+                    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 10000; display: flex; align-items: center; justify-content: center;" onclick="closeResourceModal(event)">
+                        <div style="background: white; border-radius: 15px; max-width: 800px; max-height: 80vh; overflow-y: auto; margin: 20px; position: relative;" onclick="event.stopPropagation()">
+                            <div style="padding: 30px;">
+                                <button onclick="closeResourceModal()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: #666;">&times;</button>
+                                <h2 style="color: #2E8B57; margin-bottom: 20px; font-size: 2rem;">${resource.title}</h2>
+                                <div style="line-height: 1.6; color: #333;">
+                                    ${resource.content}
+                                </div>
+                                <div style="margin-top: 30px; text-align: center;">
+                                    <button onclick="closeResourceModal()" style="background: #2E8B57; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem;">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                const modalDiv = document.createElement('div');
+                modalDiv.id = 'resourceModal';
+                modalDiv.innerHTML = modalHTML;
+                document.body.appendChild(modalDiv);
+            }
+        }
+
+        function closeResourceModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            const modal = document.getElementById('resourceModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
         function initApp() {
             if (typeof L === 'undefined' || typeof Chart === 'undefined') {
                 setTimeout(initApp, 100);
                 return;
             }
 
-            // Setup navigation event listeners
+            console.log('Nestlytics initialized!');
+
             document.getElementById('navHome').addEventListener('click', () => showPage('home'));
             document.getElementById('navFeatures').addEventListener('click', () => showPage('features'));
             document.getElementById('navContact').addEventListener('click', () => showPage('contact'));
             document.getElementById('exploreBtn').addEventListener('click', () => showPage('features'));
-            
-            // Setup logo click
-            document.querySelector('.site-logo').addEventListener('click', () => showPage('home'));
+            document.getElementById('logoBtn').addEventListener('click', () => showPage('home'));
 
-            // Setup file input
+            document.getElementById('uploadArea').addEventListener('click', () => {
+                document.getElementById('fileInput').click();
+            });
+
             const fileInput = document.getElementById('fileInput');
             if (fileInput) {
                 fileInput.addEventListener('change', handleFileUpload);
             }
+
+            document.getElementById('toggleHeatmap').addEventListener('click', toggleHeatmapMode);
+            document.getElementById('toggleMarkers').addEventListener('click', toggleMarkerMode);
+            document.getElementById('fitBounds').addEventListener('click', fitMapBounds);
+            document.getElementById('boundarySelector').addEventListener('change', applyBoundary);
+
+            loadDatasetsList();
+            loadBoundaryList();
         }
 
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+            initApp();
+        }
     </script>
 </body>
+
 </html>
